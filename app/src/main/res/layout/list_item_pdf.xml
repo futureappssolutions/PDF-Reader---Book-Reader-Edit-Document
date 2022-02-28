@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_color"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:cardCornerRadius="6dp"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rLayPdf"
+        android:layout_width="fill_parent"
+        android:layout_height="72dp"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="?listPreferredItemPaddingLeft"
+            android:paddingEnd="?listPreferredItemPaddingRight">
+
+            <ImageView
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:layout_marginRight="16.0dip"
+                android:src="@drawable/ic_pdf_img" />
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="72.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPdfTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLastPdfModified"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16.0dip"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+                    <TextView
+                        android:id="@+id/tvPdfSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgStar"
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip"
+                android:layout_marginLeft="16.0dip"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/ic_action_star" />
+        </LinearLayout>
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

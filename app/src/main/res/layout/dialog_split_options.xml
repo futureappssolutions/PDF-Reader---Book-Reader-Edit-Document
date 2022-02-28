@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="24.0dip"
+    android:paddingRight="24.0dip">
+
+    <Spinner
+        android:id="@+id/spinnerSplitting"
+        android:layout_width="222.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16.0dip"
+        android:entries="@array/splitting_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etSplitFrom"
+        android:layout_width="95.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16.0dip"
+        android:ems="10"
+        android:hint="@string/from"
+        android:inputType="number"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/etSplitTo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSplitting" />
+
+    <EditText
+        android:id="@+id/etSplitTo"
+        android:layout_width="95.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16.0dip"
+        android:layout_marginTop="16.0dip"
+        android:ems="10"
+        android:hint="To"
+        android:inputType="number"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etSplitFrom"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSplitting" />
+
+    <TextView
+        android:id="@+id/tvNumberOfPages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16.0dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSplitFrom" />
+</androidx.constraintlayout.widget.ConstraintLayout>

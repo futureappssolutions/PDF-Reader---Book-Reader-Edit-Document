@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuTools"
+        android:icon="@drawable/ic_round_build_24"
+        android:title="@string/pdf_tools" />
+    <item
+        android:id="@+id/menuRate"
+        android:icon="@drawable/ic_action_star_yellow"
+        android:title="@string/rate_this_app" />
+    <item
+        android:id="@+id/menuShare"
+        android:icon="@drawable/ic_menu_share"
+        android:title="@string/share_this_app" />
+    <item
+        android:id="@+id/menuSettings"
+        android:icon="@drawable/ic_menu_settings"
+        android:title="@string/settings" />
+    <item
+        android:id="@+id/menuRemoveAds"
+        android:icon="@drawable/no_ads"
+        android:title="@string/remove_ads" />
+</menu>

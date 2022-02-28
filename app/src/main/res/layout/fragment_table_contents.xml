@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPdfTable"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layNoPdfTableData"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:background="@color/colorEmptyStateBg"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="16.0dip"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="112.0dip"
+            android:layout_height="112.0dip"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_empty_state_contents" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16.0dip"
+            android:text="@string/pdf_file_has_no_contents"
+            android:textColor="@color/colorEmptyStateTextPrimary"
+            android:textSize="16.0sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

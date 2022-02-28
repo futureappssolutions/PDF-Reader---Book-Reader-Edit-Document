@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="pdfreader.pdfviewer.pdfscanner.documentreader.officetool">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+
+    <application
+        android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.MyApplication"
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:extractNativeLibs="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/app_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,UnusedAttribute">
+
+        <meta-data
+            android:name="applovin.sdk.key"
+            android:value="TciuTRecze8TdoQOCTmS6GmCcq0HvwyOq4Ouk36w6gJGPza8XenJg8I2PTUZhnyfezBfTwArn-hDwFWWEGwcyp" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityLaunchScreen"
+            android:exported="true"
+            android:launchMode="standard"
+            android:noHistory="true"
+            android:screenOrientation="locked">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFViewer"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityMain"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityMain"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="standard"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFTools"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityMain"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivitySelectPDF"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFTools"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityEditMetadata"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFTools"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityOrganizePages"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFTools"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityOrganizeMergePDF"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFTools"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityShareAsPicture"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityMain"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityViewImages"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFTools"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityExtractTextsPages"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFTools"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivitySelectImages"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFTools"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityOrganizeImages"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivitySelectImages"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityFileBrowser"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityMain"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivitySettings"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityMain"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.ActivityPremium"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityMain"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityContents"
+            android:launchMode="standard"
+            android:parentActivityName="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityPDFViewer"
+            android:screenOrientation="locked" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_baseline_notifications_24" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="test_channel" />
+
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="pdfreader.pdfviewer.pdfscanner.documentreader.officetool.com.squareup.picasso"
+            android:exported="false" />
+    </application>
+
+</manifest>

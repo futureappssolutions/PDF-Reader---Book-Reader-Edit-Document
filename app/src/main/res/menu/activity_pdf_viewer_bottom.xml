@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itemBookmarkView"
+        android:icon="@drawable/ic_action_swipe_vertical"
+        android:title="@string/swipe_vertical"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemPageToJump"
+        android:icon="@drawable/ic_round_skip_next_24"
+        android:title="@string/jump_to_page"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemPdfContents"
+        android:icon="@drawable/ic_round_view_list_24"
+        android:title="@string/table_of_contents"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemBookmark"
+        android:icon="@drawable/ic_action_bookmark"
+        android:title="@string/bookmarkData"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemThemeNightMode"
+        android:icon="@drawable/ic_round_dark_mode_24"
+        android:title="@string/night_mode"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemPdfToolsSetting"
+        android:icon="@drawable/ic_round_build_24"
+        android:title="@string/pdf_tools"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="_10sdp">10.00dp</dimen>
+    <dimen name="_20sdp">20.00dp</dimen>
+    <dimen name="_5sdp">5.00dp</dimen>
+    <dimen name="_15sdp">15.00dp</dimen>
+    <dimen name="_125sdp">125.00dp</dimen>
+    <dimen name="_2sdp">2.00dp</dimen>
+    <dimen name="_13sdp">13.00dp</dimen>
+    <dimen name="_3sdp">3.00dp</dimen>
+    <dimen name="_14sdp">14.00dp</dimen>
+    <dimen name="_50sdp">50.00dp</dimen>
+    <dimen name="banner_height">55dp</dimen>
+    <dimen name="_12sdp">12sp</dimen>
+    <dimen name="_22sdp">24.00dp</dimen>
+    <dimen name="_19sdp">24.00dp</dimen>
+    <dimen name="_8sdp">8dp</dimen>
+
+
+</resources>

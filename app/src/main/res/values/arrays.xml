@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="compression_level">
+        <item>@string/low</item>
+        <item>@string/medium</item>
+        <item>@string/high</item>
+    </string-array>
+    <string-array name="image_directories">
+        <item>@string/all</item>
+        <item>@string/camera</item>
+        <item>@string/downloads</item>
+        <item>@string/pictures</item>
+        <item>@string/whatsapp_images</item>
+    </string-array>
+    <string-array name="languages">
+        <item>English</item>
+        <item>Bengali</item>
+        <item>Indonesian</item>
+        <item>Russian</item>
+    </string-array>
+    <string-array name="languages_entry_keys">
+        <item>en</item>
+        <item>bn</item>
+        <item>in</item>
+        <item>ru</item>
+    </string-array>
+    <string-array name="splitting_options">
+        <item>@string/all_pages</item>
+        <item>@string/at_specified_page</item>
+        <item>@string/at_specified_range</item>
+    </string-array>
+</resources>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/light_color"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/light_color"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="@string/edit_metadata"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:titleTextColor="@color/black" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="?listPreferredItemPaddingLeft"
+            android:paddingTop="8.0dip"
+            android:paddingRight="?listPreferredItemPaddingRight">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24.0dip"
+                    android:layout_height="24.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginRight="32.0dip"
+                    android:src="@drawable/ic_title" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0">
+
+                    <EditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/title"
+                        android:imeOptions="flagNoExtractUi"
+                        app:backgroundTint="@color/colorSeparator" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24.0dip"
+                    android:layout_height="24.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginRight="32.0dip"
+                    android:src="@drawable/ic_author" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0">
+
+                    <EditText
+                        android:id="@+id/etAuthor"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/author"
+                        android:imeOptions="flagNoExtractUi"
+                        app:backgroundTint="@color/colorSeparator" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56.0dip"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0">
+
+                    <EditText
+                        android:id="@+id/etCreatorName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/creator"
+                        android:imeOptions="flagNoExtractUi"
+                        app:backgroundTint="@color/colorSeparator" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56.0dip"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0">
+
+                    <EditText
+                        android:id="@+id/etProducerName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/producer"
+                        android:imeOptions="flagNoExtractUi"
+                        app:backgroundTint="@color/colorSeparator" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24.0dip"
+                    android:layout_height="24.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginRight="32.0dip"
+                    android:src="@drawable/ic_subject" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0">
+
+                    <EditText
+                        android:id="@+id/etSubject"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/subject"
+                        android:imeOptions="flagNoExtractUi"
+                        app:backgroundTint="@color/colorSeparator" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24.0dip"
+                    android:layout_height="24.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginRight="32.0dip"
+                    android:src="@drawable/ic_keywords" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0">
+
+                    <EditText
+                        android:id="@+id/etKeywords"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/keywords"
+                        android:imeOptions="flagNoExtractUi"
+                        app:backgroundTint="@color/colorSeparator" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24.0dip"
+                    android:layout_height="24.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginRight="32.0dip"
+                    android:src="@drawable/ic_date" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0">
+
+                    <EditText
+                        android:id="@+id/etCreatedDate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/created_date"
+                        android:imeOptions="flagNoExtractUi"
+                        app:backgroundTint="@color/colorSeparator" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24.0dip"
+                    android:layout_height="24.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:layout_marginRight="32.0dip" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:layout_weight="1.0">
+
+                    <EditText
+                        android:id="@+id/etModifiedDate"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/modified_date"
+                        android:imeOptions="flagNoExtractUi"
+                        app:backgroundTint="@color/colorSeparator" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+</LinearLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/progressMain"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/white"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:background="@color/light_color"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@color/light_color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgCloseProgress"
+                    android:layout_width="32.0dip"
+                    android:layout_height="32.0dip"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12.0dip"
+                    android:background="@drawable/selector_red_rd10"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="closeProgressBar"
+                    android:src="@drawable/ic_action_close_white"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:id="@+id/fl_native"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <ImageView
+                    android:id="@+id/imgPdfSuccess"
+                    android:layout_width="80dp"
+                    android:layout_height="80.0dip"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:src="@drawable/ic_tick"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvDownloadPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8.0dip"
+                    android:text="0%"
+                    android:textColor="@color/black"
+                    android:textSize="50.0sp" />
+
+                <ProgressBar
+                    android:id="@+id/progressDownloading"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16.0dip"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginEnd="16.0dip"
+                    android:layout_marginBottom="8.0dip" />
+
+                <TextView
+                    android:id="@+id/tvCurrentAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16.0dip"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginRight="16.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="30.0sp" />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0dip"
+                    android:layout_marginRight="16.0dip"
+                    android:layout_marginBottom="8.0dip"
+                    android:textColor="@color/black"
+                    android:textSize="16.0sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvSavedPdfPath"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16.0dip"
+                    android:layout_marginEnd="16.0dip"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16.0sp" />
+
+                <Button
+                    android:id="@+id/btnOpenPdfFile"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16.0dip"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="16.0dip"
+                    android:layout_marginBottom="24.0dip"
+                    android:background="@drawable/selector_red_rd10"
+                    android:text="@string/open_file"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnCancelProgress"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16.0dip"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="16.0dip"
+                    android:layout_marginBottom="24.0dip"
+                    android:background="@drawable/selector_red_rd10"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

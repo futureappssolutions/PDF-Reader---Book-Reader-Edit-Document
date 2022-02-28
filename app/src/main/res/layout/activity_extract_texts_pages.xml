@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/light_color"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/light_color"
+        android:theme="@style/AppTheme.AppBarOverlayDark"
+        app:navigationIcon="@drawable/ic_action_back_black"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="@string/select_pages"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:titleTextColor="@color/black" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_banner"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:animateLayoutChanges="true">
+
+            <RelativeLayout
+                android:id="@+id/rLayInfoTapMoreOptions"
+                android:layout_width="fill_parent"
+                android:layout_height="72.0dip"
+                android:background="@color/colorMoreInfo"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="?listPreferredItemPaddingLeft"
+                android:paddingRight="?listPreferredItemPaddingRight"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40.0dip"
+                        android:layout_height="40.0dip"
+                        android:layout_marginRight="16.0dip"
+                        android:src="@drawable/ic_info_blue" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="72.0dip"
+                        android:layout_weight="1.0"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/click_on_pages_you_want_to_extract"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgTapClose"
+                        android:layout_width="24.0dip"
+                        android:layout_height="24.0dip"
+                        android:layout_marginLeft="16.0dip"
+                        android:layout_marginRight="4.0dip"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/ic_action_cancel" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleOrganizePages"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/rLayInfoTapMoreOptions"
+                android:clipToPadding="false"
+                android:paddingLeft="3.0dip"
+                android:paddingTop="2.0dip"
+                android:paddingRight="7.0dip"
+                android:paddingBottom="7.0dip" />
+
+            <ProgressBar
+                android:id="@+id/progressOrganizePages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatBtnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center|right"
+            android:layout_margin="24.0dip"
+            android:src="@drawable/ic_action_save"
+            android:visibility="gone"
+            app:elevation="2.0dip"
+            app:fabSize="normal" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <include
+        layout="@layout/progress_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_banner" />
+
+    <LinearLayout
+        android:id="@+id/ll_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" />
+</RelativeLayout>

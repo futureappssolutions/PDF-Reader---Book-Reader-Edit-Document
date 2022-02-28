@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#ffec2045</color>
+    <color name="black">#ff000000</color>
+    <color name="color54">#8a000000</color>
+    <color name="colorAccent">#CCFF5529</color>
+    <color name="colorAmber">#ffffc107</color>
+    <color name="colorDarkGreen">#ff379558</color>
+    <color name="colorDarkerGray">#ff616161</color>
+    <color name="colorDividerLight">#ffdbdbdb</color>
+    <color name="colorEmptyStateBg">#ffededed</color>
+    <color name="colorEmptyStateTextPrimary">#ff919191</color>
+    <color name="colorLightGray">#ffe0e0e0</color>
+    <color name="colorLightGreen">#ffecf8f0</color>
+    <color name="colorMoreInfo">#ffdaf1e2</color>
+    <color name="colorNameOverlay">#f0ffffff</color>
+    <color name="colorPDFViewBg">#ffe0e0e0</color>
+    <color name="colorPrimary">#CCFF5529</color>
+    <color name="appColor">#CCFF5529</color>
+    <color name="colorPrimaryDark">#CCFF5529</color>
+    <color name="light_color">#F3EBEB</color>
+    <color name="colorPrimaryDarkNight">#ff192532</color>
+    <color name="colorPrimaryNight">#ff243447</color>
+    <color name="colorSelectedImage">#b4ffffff</color>
+    <color name="colorSelectedPDFs">#ffeeeeee</color>
+    <color name="colorSeparator">#ffe0e0e0</color>
+    <color name="colorTitleTextLight">#ff212121</color>
+    <color name="colorTitleTextNight">#c2ffffff</color>
+    <color name="grey_200">#ffeeeeee</color>
+    <color name="grey_400">#ffbdbdbd</color>
+    <color name="grey_500">#ff9e9e9e</color>
+    <color name="icon_menu_color">#ff888888</color>
+    <color name="switch_thumb_disabled_material_dark">#ff616161</color>
+    <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
+    <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
+    <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <color name="tab_press_color">@color/white</color>
+    <color name="text_black">#ff323232</color>
+    <color name="text_gray">#ffe1e1e1</color>
+    <color name="text_gray_2">#ff888888</color>
+    <color name="text_white">#ffffffff</color>
+    <color name="white">#ffffffff</color>
+    <color name="gray">#ff888888</color>
+
+</resources>

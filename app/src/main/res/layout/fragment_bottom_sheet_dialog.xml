@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:divider="?dividerVertical"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            android:layout_marginLeft="16.0dip"
+            android:layout_marginTop="8.0dip"
+            android:layout_marginRight="16.0dip"
+            android:layout_marginBottom="7.0dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="32.0dip"
+                android:layout_height="32.0dip"
+                android:layout_marginRight="16.0dip"
+                android:src="@drawable/ic_pdf_img" />
+
+            <TextView
+                android:id="@+id/tvPdfFileName"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16.0sp"
+                android:layout_weight="1.0"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/icon_menu_color"
+                android:textSize="16.0sp" />
+
+            <ImageView
+                android:id="@+id/imgBookMarkPdf"
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip"
+                android:layout_marginLeft="16.0dip"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/ic_action_star" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16.0dip"
+            android:paddingRight="16.0dip"
+            android:paddingBottom="8.0dip">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/laySharePdf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48.0dip"
+                        android:layout_marginTop="8.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16.0dip"
+                            android:src="@drawable/ic_round_ios_share_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.0dip"
+                            android:text="@string/share"
+                            android:textColor="@color/color54"
+                            android:textSize="16.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/laySharePdfPicture"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16.0dip"
+                            android:src="@drawable/ic_round_picture_as_pdf_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.0dip"
+                            android:text="@string/share_as_picture"
+                            android:textColor="@color/color54"
+                            android:textSize="16.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layRenamePdf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16.0dip"
+                            android:src="@drawable/ic_round_edit_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.0dip"
+                            android:text="@string/rename"
+                            android:textColor="@color/color54"
+                            android:textSize="16.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layPdfReader"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16.0dip"
+                            android:src="@drawable/ic_round_build_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.0dip"
+                            android:text="@string/pdf_tools"
+                            android:textColor="@color/color54"
+                            android:textSize="16.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layPdfPrint"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16.0dip"
+                            android:src="@drawable/ic_round_print_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.0dip"
+                            android:text="@string/print"
+                            android:textColor="@color/color54"
+                            android:textSize="16.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layPdfSaveLocation"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16.0dip"
+                            android:src="@drawable/ic_round_sd_card_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.0dip"
+                            android:text="@string/location"
+                            android:textColor="@color/color54"
+                            android:textSize="16.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layPdfDelete"
+                        android:layout_width="fill_parent"
+                        android:layout_height="48.0dip"
+                        android:layout_marginBottom="8.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="16.0dip"
+                            android:src="@drawable/ic_round_delete_24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16.0dip"
+                            android:text="@string/delete"
+                            android:textColor="@color/color54"
+                            android:textSize="16.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

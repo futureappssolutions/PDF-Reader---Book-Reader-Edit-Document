@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuSearchPdfBookmark"
+        android:icon="@drawable/ic_search_menu"
+        android:title="@string/search"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/ic_menu_sort"
+        android:title="@string/sort"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/action_by_name"
+                android:title="@string/by_name" />
+            <item
+                android:id="@+id/action_by_date_modified"
+                android:title="@string/by_date_modified" />
+            <item
+                android:id="@+id/action_by_size"
+                android:title="@string/by_size" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menuPdfListView"
+        android:icon="@drawable/ic_list_menu"
+        android:title="@string/list_view"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menuPdfGrid"
+        android:icon="@drawable/ic_menu_grid"
+        android:title="@string/grid_view"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menuGridTwoColumns"
+                android:title="@string/_2_columns" />
+            <item
+                android:id="@+id/menuGridThreeColumns"
+                android:title="@string/_3_columns" />
+            <item
+                android:id="@+id/menuGridFourColumns"
+                android:title="@string/_4_columns" />
+            <item
+                android:id="@+id/menuGridFiveColumns"
+                android:title="@string/_5_columns" />
+            <item
+                android:id="@+id/menuGridSixColumns"
+                android:title="@string/_6_columns" />
+        </menu>
+    </item>
+</menu>

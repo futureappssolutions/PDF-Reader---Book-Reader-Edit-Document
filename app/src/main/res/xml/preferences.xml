@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/reading">
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:icon="@drawable/ic_settings_brightness"
+            android:key="prefs_stay_awake"
+            android:summary="Prevent screen turn off while reading"
+            android:title="Stay awake" />
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:icon="@drawable/ic_settings_last_page"
+            android:key="prefs_remember_last_page"
+            android:summary="Pick up where you left off"
+            android:title="Remember last page" />
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:icon="@drawable/ic_settings_fullscreen"
+            android:key="prefs_auto_full_screen"
+            android:summary="Automatically hide all controls in PDF view"
+            android:title="Auto full screen" />
+    </PreferenceCategory>
+</PreferenceScreen>

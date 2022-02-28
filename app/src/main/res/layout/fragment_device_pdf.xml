@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/light_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rLayTapMore"
+        android:layout_width="fill_parent"
+        android:layout_height="72.0dip"
+        android:background="@color/colorMoreInfo"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="?listPreferredItemPaddingLeft"
+        android:paddingRight="?listPreferredItemPaddingRight"
+        android:visibility="gone"
+        tools:ignore="RtlHardcoded">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:layout_width="36.0dip"
+                android:layout_height="36.0dip"
+                android:layout_marginRight="16.0dip"
+                android:contentDescription="@string/img_desc"
+                android:src="@drawable/ic_round_info_24" />
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="72.0dip"
+                android:layout_weight="1.0"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@string/tap_and_hold_on_a_pdf_for_more_options"
+                    android:textColor="@android:color/black"
+                    android:textSize="15.0sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgTapClose"
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip"
+                android:layout_marginLeft="16.0dip"
+                android:layout_marginRight="4.0dip"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/img_desc"
+                android:focusable="true"
+                android:src="@drawable/ic_round_cancel_24" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@color/light_color"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipePdfRecycle"
+            android:background="@color/light_color"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleDevicePdf"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clipToPadding="false"
+                android:paddingRight="4.0dip"
+                android:paddingBottom="80.0dip"
+                android:scrollbars="vertical" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_progress"
+            android:background="@color/light_color"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressDevicePdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layNoDevicePdf"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/light_color"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="16.0dip"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="70.0dip"
+                android:layout_height="80.0dip"
+                android:layout_gravity="center_horizontal"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/pdf_splash" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/all_pdfs_from_your_device_will_appear_here"
+                android:textColor="@color/colorEmptyStateTextPrimary"
+                android:textSize="16.0sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

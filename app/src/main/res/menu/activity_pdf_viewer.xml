@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itemShare"
+        android:icon="@drawable/ic_round_ios_share_24"
+        android:title="@string/share"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemSharePicture"
+        android:icon="@drawable/ic_round_picture_as_pdf_24"
+        android:title="@string/share_as_picture"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemPrint"
+        android:icon="@drawable/ic_round_print_24"
+        android:title="@string/print"
+        app:showAsAction="ifRoom" />
+</menu>

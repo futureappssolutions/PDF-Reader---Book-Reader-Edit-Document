@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/laySearchBarPdf"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:actionBarSize"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/imgSearchPdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?android:listPreferredItemPaddingLeft"
+        android:layout_marginTop="8.0dip"
+        android:layout_marginBottom="8.0dip"
+        android:background="?selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="false"
+        android:src="@drawable/ic_action_back_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgSearchClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8.0dip"
+        android:layout_marginTop="8.0dip"
+        android:layout_marginEnd="?android:listPreferredItemPaddingLeft"
+        android:layout_marginBottom="8.0dip"
+        android:background="?selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="false"
+        android:src="@drawable/ic_action_close"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editSearchPdfText"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32.0dip"
+        android:layout_marginTop="8.0dip"
+        android:layout_marginEnd="8.0dip"
+        android:layout_marginBottom="8.0dip"
+        android:background="@android:color/transparent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Search..."
+        android:imeOptions="actionSearch|flagNoExtractUi"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgSearchClose"
+        app:layout_constraintStart_toEndOf="@+id/imgSearchPdf"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

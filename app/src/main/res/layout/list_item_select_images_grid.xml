@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/imgThumbPdf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/img_desc"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:id="@+id/laySelectedPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorSelectedImage"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:contentDescription="@string/img_desc"
+                android:src="@drawable/ic_action_selected" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
