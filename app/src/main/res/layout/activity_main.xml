@@ -58,17 +58,16 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="68dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/shape_navigation"
             app:itemBackground="@drawable/activity_main__tab_background"
-            app:labelVisibilityMode="unlabeled"
             app:itemIconTint="@null"
-            app:itemRippleColor="@color/appColor"
+            app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_nav">
 
             <LinearLayout
@@ -77,117 +76,46 @@
                 android:baselineAligned="false"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+
+                <ImageView
+                    android:id="@+id/imgHome"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
+                    android:src="@drawable/ic_tab_pdf" />
 
-                    <ImageView
-                        android:id="@+id/imgHome"
-                        android:layout_width="46dp"
-                        android:layout_height="46dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/app_name"
-                        android:padding="7dp"
-                        android:src="@drawable/ic_tab_pdf" />
 
-                    <TextView
-                        android:id="@+id/txtHome"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" 
-                        android:scrollHorizontally="true"
-                        android:text="Home"
-                        android:textColor="@color/appColor"
-                        android:textSize="10sp"
-                        android:visibility="gone"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/imgRecent"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
+                    android:padding="6dp"
+                    android:src="@drawable/ic_tab_recent_gray" />
 
-                    <ImageView
-                        android:id="@+id/imgRecent"
-                        android:layout_width="46dp"
-                        android:layout_height="46dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/app_name"
-                        android:padding="7dp"
-                        android:src="@drawable/ic_tab_recent_gray" />
 
-                    <TextView
-                        android:visibility="gone"
-                        android:id="@+id/txtRecent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:scrollHorizontally="true"
-                        android:text="Recent"
-                        android:textColor="@color/gray"
-                        android:textSize="10sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/imgFavourite"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
+                    android:padding="6dp"
+                    android:src="@drawable/ic_tab_fav_gray" />
 
-                    <ImageView
-                        android:id="@+id/imgFavourite"
-                        android:layout_width="46dp"
-                        android:layout_height="46dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/app_name"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_tab_fav_gray" />
 
-                    <TextView
-                        android:visibility="gone"
-                        android:id="@+id/txtFavourite"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:scrollHorizontally="true"
-                        android:text="Favourite"
-                        android:textColor="@color/gray"
-                        android:textSize="10sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                <ImageView
+                    android:id="@+id/imgTools"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    tools:ignore="UseCompoundDrawables">
+                    android:padding="6dp"
+                    android:src="@drawable/ic_tab_tool_gray" />
 
-                    <ImageView
-                        android:id="@+id/imgTools"
-                        android:layout_width="46dp"
-                        android:layout_height="46dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/app_name"
-                        android:padding="9dp"
-                        android:src="@drawable/ic_tab_tool_gray" />
-
-                    <TextView
-                        android:visibility="gone"
-                        android:id="@+id/txtTools"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:scrollHorizontally="true"
-                        android:text="Tools"
-                        android:textColor="@color/gray"
-                        android:textSize="10sp" />
-                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -216,7 +144,6 @@
         android:layout_height="fill_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:itemIconTint="@color/appColor"
         app:headerLayout="@layout/nav_header"
-         />
+        app:itemIconTint="@color/appColor" />
 </androidx.drawerlayout.widget.DrawerLayout>

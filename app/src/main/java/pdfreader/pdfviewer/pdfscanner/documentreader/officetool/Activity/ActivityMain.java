@@ -48,25 +48,6 @@ import com.google.android.material.internal.NavigationMenuView;
 import com.google.android.material.navigation.NavigationView;
 import com.itextpdf.text.html.HtmlTags;
 
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.ActivityPremium;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.GoogleAppLovinAds;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.Security;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.utils.DataUpdatedEvent;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.R;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Adapter.AdapterDevicePdfs;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Adapter.AdapterRecentPdfs;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.customview.MaterialSearchView;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.data.DbHelper;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentDevicePdf;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentPDFTools;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentRecentPdf;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentSettings;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentStarredPDF;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.GetSet.PdfDataType;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.utils.LocaleUtils;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.Preference;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.utils.Utils;
-
 import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
@@ -74,7 +55,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class ActivityMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, FragmentRecentPdf.OnRecentPdfClickListener, AdapterDevicePdfs.OnPdfClickListener, AdapterRecentPdfs.OnHistoryPdfClickListener, MaterialSearchView.OnQueryTextListener,View.OnClickListener {
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Adapter.AdapterDevicePdfs;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Adapter.AdapterRecentPdfs;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.ActivityPremium;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.GoogleAppLovinAds;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.Preference;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.Security;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentDevicePdf;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentPDFTools;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentRecentPdf;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentSettings;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Fragments.FragmentStarredPDF;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.GetSet.PdfDataType;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.R;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.customview.MaterialSearchView;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.data.DbHelper;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.utils.DataUpdatedEvent;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.utils.LocaleUtils;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.utils.Utils;
+
+public class ActivityMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, FragmentRecentPdf.OnRecentPdfClickListener, AdapterDevicePdfs.OnPdfClickListener, AdapterRecentPdfs.OnHistoryPdfClickListener, MaterialSearchView.OnQueryTextListener, View.OnClickListener {
     public static final String PDF_LOCATION = "com.example.pdfreader.PDF_LOCATION";
     public static final String SHOW_REMOVE_ADS = "com.example.pdfreader.SHOW_REMOVE_ADS";
     public static String GRID_VIEW_ENABLED = "prefs_grid_view_enabled";
@@ -94,8 +94,8 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
     MaterialSearchView searchBrowsePdf;
     SharedPreferences sharedPreferences;
     BottomNavigationView bottomNavigation;
-    ImageView imgHome,imgRecent,imgFavourite,imgTools;
-    TextView txtHome,txtRecent,txtFavourite,txtTools;
+    ImageView imgHome, imgRecent, imgFavourite, imgTools;
+
 
     PurchasesUpdatedListener purchasesUpdatedListener = (billingResult, list) -> {
         Toast.makeText(ActivityMain.this, billingResult.toString(), Toast.LENGTH_SHORT).show();
@@ -159,10 +159,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         imgFavourite = (ImageView) findViewById(R.id.imgFavourite);
         imgTools = (ImageView) findViewById(R.id.imgTools);
 
-        txtHome = (TextView) findViewById(R.id.txtHome);
-        txtRecent = (TextView) findViewById(R.id.txtRecent);
-        txtFavourite = (TextView) findViewById(R.id.txtFavourite);
-        txtTools = (TextView) findViewById(R.id.txtTools);
+
         bottomNavigation = findViewById(R.id.bottomNavigation);
         bottomNavigation.setItemIconTintList(null);
 
@@ -172,10 +169,6 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
             imgFavourite = (ImageView) findViewById(R.id.imgFavourite);
             imgTools = (ImageView) findViewById(R.id.imgTools);
 
-            txtHome = (TextView) findViewById(R.id.txtHome);
-            txtRecent = (TextView) findViewById(R.id.txtRecent);
-            txtFavourite = (TextView) findViewById(R.id.txtFavourite);
-            txtTools = (TextView) findViewById(R.id.txtTools);
 
             switch (item.getItemId()) {
                 case R.id.nav_home:
@@ -212,13 +205,13 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         });
 
     }
+
     public void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
 
 
     @SuppressLint("NonConstantResourceId")
@@ -601,7 +594,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
 
         TextView txtExit = inflate.findViewById(R.id.txtExit);
         FrameLayout fl_native = inflate.findViewById(R.id.fl_native);
-        GoogleAppLovinAds.showNativeAds(ActivityMain.this,fl_native);
+        GoogleAppLovinAds.showNativeAds(ActivityMain.this, fl_native);
 
 
         txtExit.setOnClickListener(v -> {

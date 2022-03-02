@@ -1,5 +1,6 @@
 package pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -7,9 +8,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +27,6 @@ import com.google.android.play.core.install.model.AppUpdateType;
 import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -35,8 +35,8 @@ import com.google.firebase.database.ValueEventListener;
 import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.GoogleAppLovinAds;
 import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Ads.Preference;
 import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.R;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.data.ToolsData;
 
+@SuppressLint("CustomSplashScreen")
 public class ActivityLaunchScreen extends AppCompatActivity implements OnSuccessListener<AppUpdateInfo> {
     public static final int REQUEST_CODE = 1234;
     public final int RC_APP_UPDATE = 100;
@@ -65,92 +65,58 @@ public class ActivityLaunchScreen extends AppCompatActivity implements OnSuccess
 
         appUpdateManager = AppUpdateManagerFactory.create(ActivityLaunchScreen.this);
         mNeedsFlexibleUpdate = false;
-        FirebaseApp.initializeApp(this);
-        Preference.setGoogle_banner("ca-app-pub-3940256099942544/6300978111");
-        Preference.setGoogle_full("ca-app-pub-3940256099942544/1033173712");
-        Preference.setGoogle_native("ca-app-pub-3940256099942544/2247696110");
-        Preference.setAppLovin_banner("3b997405cd6433ed");
-        Preference.setAppLovin_full("f2f732f71d0a6c9e");
-        Preference.setAppLovin_native("67ba5142ec7b3d52");
-        Preference.setAds_name("a");
-        Preference.setAds_time("1");
 
 
-//        FirebaseDatabase.getInstance().getReference().child("app_data").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Preference.setGoogle_banner(dataSnapshot.child("banner_id").getValue(String.class));
-//                Preference.setGoogle_full(dataSnapshot.child("full_id").getValue(String.class));
-//                Preference.setGoogle_native(dataSnapshot.child("native_id").getValue(String.class));
-//                Preference.setGoogle_open(dataSnapshot.child("app_open_id").getValue(String.class));
-//                Preference.setAds_time(dataSnapshot.child("ads_time").getValue(String.class));
-//                Preference.setAds_name(dataSnapshot.child("ads_name").getValue(String.class));
-//
-////                Preference.setAppLovin_banner(dataSnapshot.child("al_banner").getValue(String.class));
-////                Preference.setAppLovin_native(dataSnapshot.child("al_native").getValue(String.class));
-////                Preference.setAppLovin_full(dataSnapshot.child("al_full").getValue(String.class));
-//
-//                Preference.setAppLovin_banner("3b997405cd6433ed");
-//                Preference.setAppLovin_full("f2f732f71d0a6c9e");
-//                Preference.setAppLovin_native("67ba5142ec7b3d52");
-//
-//                Preference.setActive_AdsWeek(dataSnapshot.child("weekly_key").getValue(String.class));
-//                Preference.setActive_AdsMonth(dataSnapshot.child("monthly_key").getValue(String.class));
-//                Preference.setActive_AdsYear(dataSnapshot.child("yearly_key").getValue(String.class));
-//                Preference.setBase_key(dataSnapshot.child("base_key").getValue(String.class));
-//
-//                try {
-//                    GoogleAppLovinAds.allcount60 = new android.os.CountDownTimer(Integer.parseInt(Preference.getAds_time()) * 1000L, 1000) {
-//                        public void onTick(long millisUntilFinished) {
-//                            GoogleAppLovinAds.adsdisplay = false;
-//                        }
-//
-//                        public void onFinish() {
-//                            GoogleAppLovinAds.adsdisplay = true;
-//                        }
-//                    };
-//                    GoogleAppLovinAds.allcount60.start();
-//                } catch (NumberFormatException ex) {
-//                    ex.printStackTrace();
-//                }
-//
-//                GoogleAppLovinAds.preLoadAds(ActivityLaunchScreen.this);
-//
-//                new Handler(Looper.myLooper()).postDelayed(() -> {
-//                    startActivity(new Intent(ActivityLaunchScreen.this, ActivityMain.class));
-//                    finish();
-//                }, 4000);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                Toast.makeText(ActivityLaunchScreen.this, "Something went wrong please try again.!", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        FirebaseDatabase.getInstance().getReference().child("app_data").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                Preference.setGoogle_banner(dataSnapshot.child("banner_id").getValue(String.class));
+                Preference.setGoogle_full(dataSnapshot.child("full_id").getValue(String.class));
+                Preference.setGoogle_native(dataSnapshot.child("native_id").getValue(String.class));
+                Preference.setGoogle_open(dataSnapshot.child("app_open_id").getValue(String.class));
+                Preference.setAds_time(dataSnapshot.child("ads_time").getValue(String.class));
+                Preference.setAds_name(dataSnapshot.child("ads_name").getValue(String.class));
 
+                Preference.setAppLovin_banner(dataSnapshot.child("al_banner").getValue(String.class));
+                Preference.setAppLovin_native(dataSnapshot.child("al_native").getValue(String.class));
+                Preference.setAppLovin_full(dataSnapshot.child("al_full").getValue(String.class));
 
-        try {
-            GoogleAppLovinAds.allcount60 = new android.os.CountDownTimer(Integer.parseInt(Preference.getAds_time()) * 1000L, 1000) {
-                public void onTick(long millisUntilFinished) {
-                    GoogleAppLovinAds.adsdisplay = false;
+                Preference.setActive_AdsWeek(dataSnapshot.child("weekly_key").getValue(String.class));
+                Preference.setActive_AdsMonth(dataSnapshot.child("monthly_key").getValue(String.class));
+                Preference.setActive_AdsYear(dataSnapshot.child("yearly_key").getValue(String.class));
+                Preference.setBase_key(dataSnapshot.child("base_key").getValue(String.class));
+
+                try {
+                    GoogleAppLovinAds.allcount60 = new android.os.CountDownTimer(Integer.parseInt(Preference.getAds_time()) * 1000L, 1000) {
+                        public void onTick(long millisUntilFinished) {
+                            GoogleAppLovinAds.adsdisplay = false;
+                        }
+
+                        public void onFinish() {
+                            GoogleAppLovinAds.adsdisplay = true;
+                        }
+                    };
+                    GoogleAppLovinAds.allcount60.start();
+                } catch (NumberFormatException ex) {
+                    ex.printStackTrace();
                 }
 
-                public void onFinish() {
-                    GoogleAppLovinAds.adsdisplay = true;
-                }
-            };
-            GoogleAppLovinAds.allcount60.start();
-        } catch (NumberFormatException ex) {
-            ex.printStackTrace();
-        }
+                GoogleAppLovinAds.preLoadAds(ActivityLaunchScreen.this);
 
-        GoogleAppLovinAds.preLoadAds(ActivityLaunchScreen.this);
+                new Handler(Looper.myLooper()).postDelayed(() -> {
+                    startActivity(new Intent(ActivityLaunchScreen.this, ActivityMain.class));
+                    finish();
+                }, 4000);
+            }
 
-        new Handler(Looper.myLooper()).postDelayed(() -> {
-            startActivity(new Intent(ActivityLaunchScreen.this, ActivityMain.class));
-            finish();
-        }, 4000);
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("databaseError", databaseError.toString());
+                Log.e("databaseError", databaseError.getMessage());
+            }
+        });
+
     }
 
     @Override

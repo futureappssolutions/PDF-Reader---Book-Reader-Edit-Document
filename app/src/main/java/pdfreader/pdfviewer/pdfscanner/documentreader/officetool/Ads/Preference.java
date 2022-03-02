@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class Preference {
-    public SharedPreferences.Editor editor;
     private static final String active_Weekly = "weekly_key";
     private static final String active_Monthly = "monthly_key";
     private static final String active_Yearly = "yearly_key";
@@ -19,11 +18,10 @@ public class Preference {
     private static final String AppLovin_banner = "AppLovin_banner";
     private static final String AppLovin_native = "AppLovin_native";
 
-
     private static final String active_AkeyY = "active_AkeyY";
     private static final String active_AkeyM = "active_AkeyM";
     private static final String active_AkeyG = "active_AkeyG";
-
+    public SharedPreferences.Editor editor;
 
     private static SharedPreferences get() {
         return MyApplication.getApp().getSharedPreferences("AppController", Context.MODE_PRIVATE);
@@ -86,7 +84,6 @@ public class Preference {
     public static void setAppLovin_native(String value) {
         get().edit().putString(AppLovin_native, value).apply();
     }
-
 
     public static String getGoogle_native() {
         return get().getString(Google_native, "");

@@ -39,13 +39,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.utils.DataUpdatedEvent;
 import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Activity.ActivityMain;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.R;
 import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.Adapter.AdapterDevicePdfs;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.GetSet.PdfDataType;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.R;
 import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.customview.MaterialSearchView;
 import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.data.DbHelper;
-import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.GetSet.PdfDataType;
+import pdfreader.pdfviewer.pdfscanner.documentreader.officetool.utils.DataUpdatedEvent;
 
 public class FragmentDevicePdf extends Fragment implements MaterialSearchView.OnQueryTextListener {
     private static final String ARG_PARAM1 = "param1";
@@ -57,7 +57,6 @@ public class FragmentDevicePdf extends Fragment implements MaterialSearchView.On
     public boolean isGridViewEnabled;
     public LinearLayout layNoDevicePdf;
     public ProgressBar progressDevicePdf;
-    LinearLayout ll_progress;
     public RelativeLayout rLayTapMore;
     public RecyclerView recycleDevicePdf;
     public boolean showMoreOptionsTip;
@@ -65,6 +64,7 @@ public class FragmentDevicePdf extends Fragment implements MaterialSearchView.On
     public ImageView imgTapClose;
     public String mParam1;
     public String mParam2;
+    LinearLayout ll_progress;
     List<PdfDataType> myPdfDataTypes = new ArrayList<>();
     int numberOfColumns;
     SharedPreferences sharedPreferences;
@@ -296,61 +296,6 @@ public class FragmentDevicePdf extends Fragment implements MaterialSearchView.On
         new refreshDevicePdfFiles().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    public class DevicePdfLoad extends AsyncTask<Void, Void, Void> {
-        public DevicePdfLoad() {
-        }
-
-        public void onPreExecute() {
-            super.onPreExecute();
-            myPdfDataTypes.clear();
-
-            progressDevicePdf.setVisibility(View.VISIBLE);
-            ll_progress.setVisibility(View.VISIBLE);
-        }
-
-        public Void doInBackground(Void... voidArr) {
-//            myPdfDataTypes = dbHelper.getAllPdfs();
-            walkDir(Environment.getExternalStorageDirectory());
-            devicePdfsAdapter = new AdapterDevicePdfs(myPdfDataTypes, activityCompat);
-            return null;
-        }
-
-        public void onPostExecute(Void r3) {
-            super.onPostExecute(r3);
-            progressDevicePdf.setVisibility(View.GONE);
-            ll_progress.setVisibility(View.GONE);
-            recycleDevicePdf.setAdapter(devicePdfsAdapter);
-            if (myPdfDataTypes.isEmpty()) {
-                layNoDevicePdf.setVisibility(View.VISIBLE);
-            } else {
-                layNoDevicePdf.setVisibility(View.GONE);
-            }
-            devicePdfsAdapter.updatePdfData(myPdfDataTypes);
-        }
-    }
-
-    public class refreshDevicePdfFiles extends AsyncTask<Void, Void, Void> {
-        public refreshDevicePdfFiles() {
-        }
-
-        public Void doInBackground(Void... voidArr) {
-//            myPdfDataTypes = dbHelper.getAllPdfs();
-            walkDir(Environment.getExternalStorageDirectory());
-            return null;
-        }
-
-        public void onPostExecute(Void r3) {
-            super.onPostExecute(r3);
-            if (myPdfDataTypes.isEmpty()) {
-                layNoDevicePdf.setVisibility(View.VISIBLE);
-            } else {
-                layNoDevicePdf.setVisibility(View.GONE);
-            }
-            swipePdfRecycle.setRefreshing(false);
-            devicePdfsAdapter.updatePdfData(myPdfDataTypes);
-        }
-    }
-
     private void walkDir(File file) {
         File[] listFiles = file.listFiles();
         if (listFiles != null) {
@@ -371,6 +316,65 @@ public class FragmentDevicePdf extends Fragment implements MaterialSearchView.On
                     }
                 }
             }
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public class DevicePdfLoad extends AsyncTask<Void, Void, Void> {
+        public DevicePdfLoad() {
+        }
+
+        public void onPreExecute() {
+            super.onPreExecute();
+            myPdfDataTypes.clear();
+
+            progressDevicePdf.setVisibility(View.VISIBLE);
+            ll_progress.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        public Void doInBackground(Void... voidArr) {
+            walkDir(Environment.getExternalStorageDirectory());
+            devicePdfsAdapter = new AdapterDevicePdfs(myPdfDataTypes, activityCompat);
+            return null;
+        }
+
+        @Override
+        public void onPostExecute(Void r3) {
+            super.onPostExecute(r3);
+            progressDevicePdf.setVisibility(View.GONE);
+            ll_progress.setVisibility(View.GONE);
+            recycleDevicePdf.setAdapter(devicePdfsAdapter);
+            if (myPdfDataTypes.isEmpty()) {
+                layNoDevicePdf.setVisibility(View.VISIBLE);
+            } else {
+                layNoDevicePdf.setVisibility(View.GONE);
+            }
+            devicePdfsAdapter.updatePdfData(myPdfDataTypes);
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public class refreshDevicePdfFiles extends AsyncTask<Void, Void, Void> {
+        public refreshDevicePdfFiles() {
+        }
+
+        @Override
+        public Void doInBackground(Void... voidArr) {
+            walkDir(Environment.getExternalStorageDirectory());
+            return null;
+        }
+
+        @Override
+        public void onPostExecute(Void r3) {
+            super.onPostExecute(r3);
+            if (myPdfDataTypes.isEmpty()) {
+                layNoDevicePdf.setVisibility(View.VISIBLE);
+            } else {
+                layNoDevicePdf.setVisibility(View.GONE);
+            }
+            swipePdfRecycle.setRefreshing(false);
+            devicePdfsAdapter.updatePdfData(myPdfDataTypes);
         }
     }
 }

@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "851312323851",
-    "project_id": "pdf-reader-81f89",
-    "storage_bucket": "pdf-reader-81f89.appspot.com"
+    "project_number": "362523680166",
+    "project_id": "pdf-reader---edit-document",
+    "storage_bucket": "pdf-reader---edit-document.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:851312323851:android:10bd89b82a61734687460e",
+        "mobilesdk_app_id": "1:362523680166:android:b4bb2baf6a7d2549f48367",
         "android_client_info": {
           "package_name": "pdfreader.pdfviewer.pdfscanner.documentreader.officetool"
         }
       },
       "oauth_client": [
         {
-          "client_id": "851312323851-5lnasj1h950atgdr91v3d7bcjk2cr9hu.apps.googleusercontent.com",
+          "client_id": "362523680166-5piavpspogn7ibalj5g0vb3t0j72pmc9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "pdfreader.pdfviewer.pdfscanner.documentreader.officetool",
-            "certificate_hash": "cb99d4b46a958f6e58435a391c1e14c88004cbb1"
+            "certificate_hash": "5e623f63495b3751d8b01733cf1242bb06581982"
           }
         },
         {
-          "client_id": "851312323851-99n9gq4l33v98j5pti7omiqpr07rkra5.apps.googleusercontent.com",
+          "client_id": "362523680166-53qu09d9v1qtct5f3pf28fbjj2b1snpt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCYKAO52mD_skkwzmQH0DCYaXeBD-cJEZs"
+          "current_key": "AIzaSyDgiXD3Ifh7jTO3XN7IkSpmGHZ8oFAMMYA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "851312323851-99n9gq4l33v98j5pti7omiqpr07rkra5.apps.googleusercontent.com",
+              "client_id": "362523680166-53qu09d9v1qtct5f3pf28fbjj2b1snpt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
